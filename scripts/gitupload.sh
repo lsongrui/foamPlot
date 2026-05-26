@@ -5,9 +5,6 @@ PACKAGE_NAME="foamplot"
 BRANCH="main"
 UPLOAD_REPOSITORY="${UPLOAD_REPOSITORY:-testpypi}"
 
-BUMP_TYPE="${1:-patch}"
-COMMIT_MESSAGE="${2:-Release new version}"
-
 usage() {
     echo "Usage:"
     echo "  scripts/gitupload.sh [patch|minor|major] [commit message]"
@@ -17,6 +14,15 @@ usage() {
     echo "  scripts/gitupload.sh patch \"add gitupload\""
     echo "  UPLOAD_REPOSITORY=pypi scripts/gitupload.sh patch \"release to PyPI\""
 }
+
+
+if [ "$#" -lt 2 ]; then
+    usage
+    exit 2
+fi
+
+BUMP_TYPE="$1"
+COMMIT_MESSAGE="$2"
 
 if [ "$BUMP_TYPE" != "patch" ] && [ "$BUMP_TYPE" != "minor" ] && [ "$BUMP_TYPE" != "major" ]; then
     usage
