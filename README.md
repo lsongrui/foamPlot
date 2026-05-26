@@ -26,7 +26,9 @@ pipx install foamplot
 foamplot --demo -i 0.1 -W 80
 ```
 
-<img src="docs/demo_black.gif" alt="foamplot demo" width="700">
+<img src="./docs/demo_black.gif" alt="foamplot demo" width="700">
+
+![foamplot demo](README/demo_black.gif)
 
 ## Examples
 
@@ -96,7 +98,7 @@ By default, `foamplot` uses the last token. To plot the final residual above:
 foamplot Ux.log --column 1
 ```
 
-## Live mode
+## Follow mode
 
 ```bash
 foamplot residuals.log --follow
@@ -109,7 +111,7 @@ In follow mode, the plot refreshes in place. Press `Ctrl+C` to stop.
 Each file becomes one line in the plot.
 
 ```bash
-foamplot p.log Ux.log Uy.log --names p,Ux,Uy --follow
+foamplot logs/pa_0 logs/Ux_0 logs/Uy_0 --names p,Ux,Uy --follow
 ```
 
 `foamplot` currently supports up to five series.
