@@ -31,7 +31,7 @@ pipx install foamplot
 foamplot --demo -i 0.1 -W 80
 ```
 
-<img src="./docs/demo_black.gif" alt="foamplot demo" width="700">
+<img src="https://raw.githubusercontent.com/lsongrui/foamplot/main/docs/demo_black.gif" alt="foamplot demo" width="700">
 
 ## Plot OpenFOAM Residuals
 
@@ -62,7 +62,7 @@ Plot any generated file in `logs/`:
 foamplot logs/p_0
 ```
 
-<img src="./docs/example1.png" alt="foamplot single-series example" width="700">
+<img src="https://raw.githubusercontent.com/lsongrui/foamplot/main/docs/example1.png" alt="foamplot single-series example" width="700">
 
 You can also plot multiple files, up to 5 series:
 
@@ -70,7 +70,7 @@ You can also plot multiple files, up to 5 series:
 foamplot logs/p_0 logs/Ux_0 logs/Uy_0
 ```
 
-<img src="./docs/example2.png" alt="foamplot multi-series example" width="700">
+<img src="https://raw.githubusercontent.com/lsongrui/foamplot/main/docs/example2.png" alt="foamplot multi-series example" width="700">
 
 ### Monitor residuals live
 
@@ -191,21 +191,34 @@ usage: foamplot [-h] [-p POINTS] [-W PLOT_WIDTH] [-H HEIGHT]
                 [files ...]
 ```
 
-| Option             | Description                                            |
-| ------------------ | ------------------------------------------------------ |
-| `files`            | Input files. Each file becomes one series.             |
-| `-p, --points`     | Number of latest lines to read. Default: `1000`.       |
-| `-W, --plot-width` | Plot width in terminal columns. Default: `120`.        |
-| `-H, --height`     | Plot height. Default: `20`.                            |
-| `-i, --interval`   | Refresh interval in seconds. Default: `0.5`.           |
-| `-c, --column`     | Zero-based numeric token to use. Default: last number. |
-| `--names`          | Comma-separated series names.                          |
-| `-f, --follow`     | Keep refreshing the plot.                              |
-| `--demo`           | Run the built-in sine-wave demo.                       |
-| `--demo-points`    | Number of demo points. Default: `100`.                 |
-| `--demo-lines`     | Number of demo series, 1 to 5. Default: `1`.           |
-| `--phase-step`     | Phase increment in demo mode. Default: `0.25`.         |
-| `--scale`          | `log` or `linear`. Default: `log`.                     |
+```bash
+positional arguments:
+  files                 foamLog-generated file(s); each file becomes one line
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p POINTS, --points POINTS
+                        latest lines to read from each file
+  -W PLOT_WIDTH, --plot-width PLOT_WIDTH
+                        maximum plot width in terminal columns
+  -H HEIGHT, --height HEIGHT
+                        chart height
+  -i INTERVAL, --interval INTERVAL
+                        refresh interval in seconds
+  -c COLUMN, --column COLUMN
+                        zero-based numeric token; default: last number
+  --names NAMES         comma-separated series names, e.g. pa,p,ux
+  -f, --follow          keep refreshing the file(s)
+  --demo                run demo instead of reading files
+  --demo-kind {sine,cfd}
+                        demo data type
+  --demo-points DEMO_POINTS
+                        maximum retained demo points before the live window
+                        starts scrolling
+  --demo-lines DEMO_LINES
+                        number of demo lines, 1 to 5
+  --scale {log,linear}  plot scale for file mode
+```
 
 ## Notes
 
