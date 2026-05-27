@@ -102,7 +102,7 @@ def format_series_status_lines(series_list):
             mx = max(series.raw_data)
             line = (
                 "  {name:<{name_width}}  file={source:<{source_width}}  "
-                "min={mn:>11.4e}  max={mx:>11.4e}  latest={latest:>11.4e}"
+                "max={mx:>11.4e}  min={mn:>11.4e}  latest={latest:>11.4e}"
             ).format(
                 name=name,
                 name_width=name_width + 2 + len(series.ansi_color) + len(RESET),
@@ -115,7 +115,7 @@ def format_series_status_lines(series_list):
         else:
             line = (
                 "  {name:<{name_width}}  file={source:<{source_width}}  "
-                "min=          -  max=          -  latest=          -"
+                "max=          -  min=          -  latest=          -"
             ).format(
                 name=name,
                 name_width=name_width + 2 + len(series.ansi_color) + len(RESET),
