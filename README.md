@@ -5,13 +5,17 @@
 [![License](https://img.shields.io/pypi/l/foamplot.svg)](LICENSE)
 [![Package status](https://img.shields.io/pypi/status/foamplot.svg)](https://pypi.org/project/foamplot/)
 
-Plot OpenFOAM-style residual/log files as line charts in the terminal. Useful for monitoring solver output on servers.
+A lightweight terminal plotting tool for OpenFOAM-style residual and log files.
 
-`foamplot` reads numeric values from one or more files and draws a live terminal plot using Unicode/Braille characters. It is useful for watching residuals, objective values, forces, coefficients, or any scalar log that grows line by line.
+`foamplot` reads numeric data from one or more files and draws live line plots directly in the terminal, suitable for monitoring residuals, forces, and other scalar log that grows line by line.
 
-Built on top of [`plotille`](https://pypi.org/project/plotille/).
+Unlike `foamMonitor`, which relies on `gnuplot_x11` and an available X display, `foamplot` renders directly in the Unix terminal, no GUI session, X11 forwarding, or gnuplot window is required.
 
-Inspired by [`asciichartpy`](https://github.com/kroitor/asciichart/tree/master/asciichartpy).
+Inspired by [`asciichart`](https://github.com/kroitor/asciichart/), but using Unicode/Braille characters for higher-resolution plots.
+
+Built on top of [`plotille`](https://pypi.org/project/plotille/), adding file monitoring, log-scale visualization, and live updating. 
+
+Thanks to `plotille`, `foamplot` does not require any other other external Python packages like NumPy, Matplotlib, pandas, or gnuplot.
 
 ## Install
 
