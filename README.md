@@ -11,6 +11,8 @@ A lightweight terminal plotting tool for OpenFOAM-style residual and log files.
 
 Unlike `foamMonitor`, which relies on `gnuplot_x11` and an available X display, `foamplot` renders directly in the Unix terminal, no GUI session, X11 forwarding, or gnuplot window is required.
 
+It works seamlessly with OpenFOAM workflows, but also supports any software that generates text files in a compatible format.
+
 Inspired by [`asciichart`](https://github.com/kroitor/asciichart/), but using Unicode/Braille characters for higher-resolution plots.
 
 Built on top of [`plotille`](https://pypi.org/project/plotille/), adding file monitoring, log-scale visualization, and live updating. 
